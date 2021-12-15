@@ -1,16 +1,8 @@
-3333
+#!/bin/bash
+# display command line options
 
-
-
-
-
-qqqq
-
-
-11qq
-
-
-	q
-:wq
-exit
-[A[A[B[B.
+count=1
+for param in "$@"; do
+	    echo "\$@ Parameter #$count = $param"
+	        count=$(( $count + 1 ))
+	done
