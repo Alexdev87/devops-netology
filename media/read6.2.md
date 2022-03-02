@@ -55,11 +55,10 @@ test_db=# select * from information_schema.table_privileges where grantee in ('t
 
 ```
 
-##  Р·Р°РґР°С‡Р° 3
-РћС‚РІРµС‚ 3
+##   3
 ###
 ```bash
-![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/3.png)
+![foto](https://github.com/Alexdev87/devops-netology/blob/main/media/3.png)
 
 ```
 
