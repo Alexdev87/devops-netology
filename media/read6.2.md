@@ -56,33 +56,21 @@ test_db=# select * from information_schema.table_privileges where grantee in ('t
 ```
 
 ##   3
-###
-```bash
 ![](https://github.com/Alexdev87/devops-netology/blob/main/media/3.png)
 
-```
 
-##  Р·Р°РґР°С‡Р° 4
-РћС‚РІРµС‚ 4
-###
-```bash
+##   4
 ![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/4.png)
-```
 
-##  Р·Р°РґР°С‡Р° 5
-РћС‚РІРµС‚ 5
-###
-```bash
+
+##   5
+
 ![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/5.png)
-```
 
 
-##  Р·Р°РґР°С‡Р° 6
-РћС‚РІРµС‚ 6
-###
-```bash
+
+##   6
 ![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/6.png)
-```
 
 
 
