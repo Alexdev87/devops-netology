@@ -1,1 +1,0 @@
-![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/3.png)

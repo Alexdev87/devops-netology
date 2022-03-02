@@ -59,8 +59,7 @@ test_db=# select * from information_schema.table_privileges where grantee in ('t
 РћС‚РІРµС‚ 3
 ###
 ```bash
-![3](media/3.png")
-
+![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/3.png)
 
 ```
 
@@ -68,14 +67,14 @@ test_db=# select * from information_schema.table_privileges where grantee in ('t
 РћС‚РІРµС‚ 4
 ###
 ```bash
-![4](media/4.png")
+![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/4.png)
 ```
 
 ##  Р·Р°РґР°С‡Р° 5
 РћС‚РІРµС‚ 5
 ###
 ```bash
-![3](media/5.png")
+![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/5.png)
 ```
 
 
@@ -83,7 +82,7 @@ test_db=# select * from information_schema.table_privileges where grantee in ('t
 РћС‚РІРµС‚ 6
 ###
 ```bash
-![6](media/6.png")
+![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/6.png)
 ```
 
 
