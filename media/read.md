@@ -1,4 +1,4 @@
-Р”РѕРјР°С€РЅРµРµ Р·Р°РґР°РЅРёРµ РїРѕ Р»РµРєС†РёРё "SQL"
+Р”РѕРјР°С€РЅРµРµ Р·Р°РґР°РЅРёРµ Рє Р·Р°РЅСЏС‚РёСЋ "6.2. SQL"
 
 ##  Р·Р°РґР°С‡Р° 1
 
@@ -53,25 +53,25 @@ test_db=# select * from information_schema.table_privileges where grantee in ('t
  postgres | test-simple-user | test_db       | public       | orders     | DELETE         | NO           | NO
 (8 rows)
 
+
 ```
 
-##   3
+## Р—Р°РґР°С‡Р°  3
 ![](https://github.com/Alexdev87/devops-netology/blob/main/media/3.png)
 
 
-##   4
-![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/4.png)
+## Р—Р°РґР°С‡Р°  4
+![](https://github.com/Alexdev87/devops-netology/blob/main/media/4.png)
 
 
-##   5
+## Р—Р°РґР°С‡Р°  5
 
-![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/5.png)
+![](https://github.com/Alexdev87/devops-netology/blob/main/media/5.png)
 
 
 
-##   6
-![Иллюстрация к проекту](https://github.com/Alexdev87/devops-netology/blob/main/media/6.png)
-
+## Р—Р°РґР°С‡Р°  6
+![](https://github.com/Alexdev87/devops-netology/blob/main/media/6.png)
 
 
 
