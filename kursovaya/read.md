@@ -1,24 +1,4 @@
- make it the smallest full K8s around.
 
-   https://ubuntu.com/blog/microk8s-memory-optimisation
-
-62 updates can be applied immediately.
-1 of these updates is a standard security update.
-To see these additional updates run: apt list --upgradable
-
-
-Last login: Tue Mar 15 18:18:04 2022 from 192.168.241.1
-adm1@ubuntuserv:~$ sudo su
-[sudo] password for adm1:
-root@ubuntuserv:/home/adm1# cd /home/adm1/my-vagrant-project
-root@ubuntuserv:/home/adm1/my-vagrant-project# scp -P 2222 vagrant@127.0.0.1:CA_cert.crt /home/adm1/my-vagrant-project
-vagrant@127.0.0.1's password:
-CA_cert.crt                                                                                                                           100% 1171   455.1KB/s   00:00
-root@ubuntuserv:/home/adm1/my-vagrant-project# telnet test.example.com 443
-Trying 192.168.241.131...
-telnet: Unable to connect to remote host: Connection refused
-root@ubuntuserv:/home/adm1/my-vagrant-project# cd /home/adm1/gitrep/devops-netology/kursovaya
-root@ubuntuserv:/home/adm1/gitrep/devops-netology/kursovaya# vim read.md
 Курсовая работа по итогам модуля "DevOps и системное администрирование"
 
 ##  задача 1   Создайте виртуальную машину Linux
@@ -65,7 +45,7 @@ To                         Action      From
 443 (v6)                   ALLOW       Anywhere (v6)
 ```
 
-## Задача  3 Установите hashicorp vault 
+## Задача 3 Установите hashicorp vault 
 Ответ
 ```bash
 git clone https://github.com/invernizzi/vagrant-scp.git
@@ -151,7 +131,7 @@ Cluster ID      f1706b4a-80bd-53cd-99e8-1d84cf2fbbd3
 HA Enabled      false
 
 ```
-## Задача  4 часть2
+## Задача  4 часть2 Создание Root CA и Intermediate CA
 Ответ
 ```bash
 root@server1:~# vault secrets enable pki
@@ -189,7 +169,7 @@ Keys
 example-dot-com
 
 ```
-## Задача 5
+## Задача 5  Установите корневой сертификат созданного центра сертификации в доверенные в хостовой системе.
 ![](https://github.com/Alexdev87/devops-netology/blob/main/kursovaya/rootcert.png)
 
 ## Задача  6.	Установите nginx.
@@ -210,12 +190,12 @@ root@server1:~# systemctl status nginx
              ├─14593 nginx: worker process
              └─14594 nginx: worker process
 
-Dec 07 10:15:15 vagrant systemd[1]: Starting A high performance web server and a reverse proxy server...
-Dec 07 10:15:15 vagrant systemd[1]: Started A high performance web server and a reverse proxy server.
+Dec 07 10:15:15 server1 systemd[1]: Starting A high performance web server and a reverse proxy server...
+Dec 07 10:15:15 server1 systemd[1]: Started A high performance web server and a reverse proxy server.
 
 root@server1:~# nano /etc/hosts
 127.0.0.1       localhost
-127.0.1.1       vagrant.vm      vagrant
+127.0.1.1       server1.vm      server
 127.0.0.1       test.example.com
 
  The following lines are desirable for IPv6 capable hosts
@@ -224,7 +204,7 @@ ff02::1 ip6-allnodes
 ff02::2 ip6-allrouters
 ```
 
-## Задача  7По инструкции (ссылка) настройте nginx на https, используя ранее подготовленный сертификат:
+## Задача  7 По инструкции (ссылка) настройте nginx на https, используя ранее подготовленный сертификат:
 Ответ
 ```bash
 root@server1:~# vault write -format=json pki_int/issue/example-dot-com common_name="test.example.com" ttl=720h > test.example.com.crt
@@ -239,12 +219,14 @@ root@server1:~# cat test.example.com.crt | jq -r .data.issuing_ca >> test.exampl
 
 root@server1:~# cat test.example.com.crt | jq -r .data.private_key > test.example.com.crt.key
 
+Настройка конфигурационного файла nano /etc/nginx/sites-enabled/default
+
         # SSL configuration
         #
           listen 443 ssl default_server;
           listen [::]:443 ssl default_server;
-          ssl_certificate /root/devops.example.com.crt.pem;
-          ssl_certificate_key /root/devops.example.com.crt.key;
+          ssl_certificate /root/test.example.com.crt.pem;
+          ssl_certificate_key /root/test.example.com.crt.key;
 
 root@server1:/home/vagrant# nginx -t
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
@@ -252,7 +234,39 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 
 ```
 
-## Задача  8
+## Задача  8 Откройте в браузере на хосте https адрес страницы, которую обслуживает сервер nginx.
 
+![](https://github.com/Alexdev87/devops-netology/blob/main/kursovaya/startpage.png)
 
+## Задача  9 	Создайте скрипт, который будет генерировать новый сертификат в vault:
+•	генерируем новый сертификат так, чтобы не переписывать конфиг nginx;
+•	перезапускаем nginx для применения нового сертификата.
+
+Ответ
+```bash
+root@server1:~# nano sert.sh
+#!/bin/bash
+vault write -format=json pki_int/issue/example-dot-com common_name="test.example.com" ttl=720h > /root/test.example.com.crt
+cat /root/test.example.com.crt | jq -r .data.certificate > /root/test.example.com.crt.pem
+cat /root/test.example.com.crt | jq -r .data.issuing_ca >> /root/test.example.com.crt.pem
+cat /root/test.example.com.crt | jq -r .data.private_key > /root/test.example.com.crt.key
+
+systemctl reload nginx
+
+root@server1:~# chmod ugo+x sert.sh
+```
+## Задача  10 Поместите скрипт в crontab, чтобы сертификат обновлялся какого-то числа каждого месяца в удобное для вас время.
+
+Ответ
+```bash
+root@server1:~# sudo systemctl enable cron
+Synchronizing state of cron.service with SysV service script with /lib/systemd/systemd-sysv-install.
+Executing: /lib/systemd/systemd-sysv-install enable cron
+root@server1:~# crontab -e
+
+Настройку сделал так - каждый месяц, 2-го числа, в 9-00 
+
+00 9 2 * * /home/ubuntu/sert.sh
+
+```
 
