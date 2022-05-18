@@ -26,8 +26,8 @@
     Делаем скриншот успешного прохождения анализа, прикладываем к решению ДЗ
 ```
 ##
-![](https://github.com/Alexdev87/devops-netology/tree/main/lesson9.2/123.bmp)
-```
+![](https://github.com/Alexdev87/devops-netology/tree/main/lesson9.2/123.png)
+
 
 ##  задача 2
 Знакомство с Nexus
