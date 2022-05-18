@@ -26,7 +26,7 @@
     Делаем скриншот успешного прохождения анализа, прикладываем к решению ДЗ
 ```
 ##
-![](https://github.com/Alexdev87/devops-netology/tree/main/lesson9.2/123.png)
+![](https://github.com/Alexdev87/devops-netology/blob/main/lesson9.2/123.png)
 
 
 ##  задача 2
