@@ -25,6 +25,7 @@
     Запускаем анализатор повторно - проверяем, что QG пройдены успешно
     Делаем скриншот успешного прохождения анализа, прикладываем к решению ДЗ
 ```
+##
 ![](https://github.com/Alexdev87/devops-netology/tree/main/lesson9.2/sonarqube.png)
 ```
 
@@ -76,6 +77,7 @@
 ```
 ##
 ![pom.xml](https://github.com/Alexdev87/devops-netology/tree/main/lesson9.2/pom.xml)
+
 
 
 
