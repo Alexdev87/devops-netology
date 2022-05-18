@@ -26,7 +26,7 @@
     Делаем скриншот успешного прохождения анализа, прикладываем к решению ДЗ
 ```
 ##
-![](https://github.com/Alexdev87/devops-netology/tree/main/lesson9.2/sonarqube.png1)
+![](https://github.com/Alexdev87/devops-netology/tree/main/lesson9.2/123.bmp)
 ```
 
 ##  задача 2
@@ -77,6 +77,7 @@
 ```
 ##
 ![pom.xml](https://github.com/Alexdev87/devops-netology/tree/main/lesson9.2/pom.xml)
+
 
 
 
