@@ -1,0 +1,13 @@
+---
+  el:
+    hosts:
+      centos8:
+        ansible_connection: docker
+  deb:
+    hosts:
+      ubuntu-new:
+        ansible_connection: docker
+  lh:
+    hosts:
+      localhost:
+        ansible_connection: local
