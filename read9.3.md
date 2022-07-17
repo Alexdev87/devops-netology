@@ -26,7 +26,7 @@
 
 Ответ:
 ```bash
-[Ответ](https://github.com/Alexdev87/example-playbook-1)
+![Ответ](https://github.com/Alexdev87/example-playbook-1)
 
 ```
 
