@@ -24,10 +24,10 @@
     Отправить ссылку на репозиторий в ответе
 
 
-Ответ:
-```bash
-![Ответ](https://github.com/Alexdev87/example-playbook-1)
+## Ответ:
 
-```
+![Jenkins](https://github.com/Alexdev87/example-playbook-1)
+
+
 
 
